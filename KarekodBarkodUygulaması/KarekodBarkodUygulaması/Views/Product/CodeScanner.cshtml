@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Scanner Page";
+}
+
+<style>
+    .file-drop-area {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 450px;
+        max-width: 100%;
+        padding: 25px;
+        border: 1px dashed rgba(255, 255, 255, 0.4);
+        border-radius: 3px;
+        transition: 0.2s;
+        background-color: rgb(255, 229, 183);
+    }
+
+    .choose-file-button {
+        flex-shrink: 0;
+        background-color: rgb(255, 185, 71);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        padding: 8px 15px;
+        margin-right: 10px;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .file-message {
+        font-size: small;
+        font-weight: 300;
+        line-height: 1.4;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .file-input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        opacity: 0;
+    }
+</style>
+@model KarekodBarkodUygulaması.Models.ViewModels.BarcodeScannerViewModel
+
+<div class="p-3 bg-white rounded">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">QR Kod</a></li>
+        <li><a data-toggle="tab" href="#barkod">Barkod</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <div class="container d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Taratmak İstediğiniz QR Kodu Yükleyin</h2>
+                        <form asp-action="QRCodeScanner" enctype="multipart/form-data">
+                            <div class="file-drop-area mb-2">
+                                <span class="choose-file-button">Resim Seç</span>
+                                <span class="file-message">ya da resmi sürükle bırak...</span>
+                                <input class="file-input" asp-for="QRCodeImageFile" accept="image/*">
+                            </div>
+                            <input class="btn btn-info" type="submit" value="Tarat" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="barkod" class="tab-pane fade">
+            <div class="container d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Taratmak İstediğiniz Barkodu Yükleyin</h2>
+                        <form asp-action="BarcodeScanner" enctype="multipart/form-data">
+                            <div class="file-drop-area mb-2">
+                                <span class="choose-file-button">Resim Seç</span>
+                                <span class="file-message">ya da resmi sürükle bırak...</span>
+                                <input class="file-input" asp-for="BarkodImageFile" accept="image/*">
+                            </div>
+                            <input class="btn btn-info" type="submit" value="Tarat" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

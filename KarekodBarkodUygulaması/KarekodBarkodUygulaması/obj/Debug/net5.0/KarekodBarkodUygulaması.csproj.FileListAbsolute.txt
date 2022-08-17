@@ -174,3 +174,12 @@ C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\Karek
 C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\bin\Debug\net5.0\BarcodeStandard.dll
 C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\bin\Debug\net5.0\System.Text.Json.dll
 C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Views\Product\AllProduct.cshtml.g.cs
+C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Views\Product\SearchProduct.cshtml.g.cs
+C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Views\Product\CodeScanner.cshtml.g.cs
+C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\bin\Debug\net5.0\JetBrains.Annotations.dll
+C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\bin\Debug\net5.0\X.PagedList.dll
+C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
+C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\KarekodBarkodUygulaması.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Views\Product\BarcodeScanner.cshtml.g.cs
+C:\Users\User\Desktop\programlama\web-programlama\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Views\Product\QRCodeScanner.cshtml.g.cs

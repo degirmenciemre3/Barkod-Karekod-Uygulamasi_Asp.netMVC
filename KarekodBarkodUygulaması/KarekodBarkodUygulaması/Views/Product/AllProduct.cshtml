@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "All Product Page";
+}
+@model IPagedList<Product> 
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
+<!--Ürün Cart-->
+<div class="d-flex bd-highlight">
+    <div class="card-deck">
+        @foreach (var x in Model)
+        {
+
+            <div class="card p-2 flex-fill bd-highlight m-3">
+                <img class="card-img-top" src=@x.productImgUrl alt=@x.productName width="358" height="180">
+                <div class="card-body">
+                    <h3 class="card-title">@x.productName</h3>
+                    <p class="card-text">Product Açıklama</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary" asp-area="" asp-controller="Product" asp-action="Index" asp-route-productID=@x.productID>Detaylar</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!--Paggination-->
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("AllProduct", new { page }))
