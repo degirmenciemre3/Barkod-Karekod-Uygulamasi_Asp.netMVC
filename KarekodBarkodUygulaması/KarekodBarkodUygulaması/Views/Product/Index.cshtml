@@ -5,34 +5,6 @@
 }
 
 @model ProductsViewModel
-@*<table class="table table-sm table-striped table-bordered">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Product Img</th>
-                <th scope="col">Product Barkod Img</th>
-                <th scope="col">Karekod Img</th>
-                <th scope="col">Product Barkod</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Product Adet</th>
-            </tr>
-        </thead>
-        <tbody>
-                @foreach (var p in Model.Products)
-                {
-
-                <tr>
-                    <th scope="row">@p.productID</th>
-                    <td><img src=@p.productImgUrl alt=@p.productName width="100" height="100"></td>
-                    <td><img src=@p.productBarkodImgUrl alt=@p.productName width="250" height="100"></td>
-                    <td><img src=@p.karekodImgUrl alt=@p.productName width="100" height="100"></td>
-                    <td>@p.productBarkod</td>
-                    <td>@p.productName</td>
-                    <td>@p.productAdet</td>
-                </tr>
-            }
-            </tbody>
-    </table>*@
 
 <style>
     .card {
@@ -66,8 +38,7 @@
         color: #728299 !important;
     }
 
-    .kutu img
-    {
+    .kutu img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -75,6 +46,7 @@
 </style>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+<!--Ürün detay bilgileri-->
 <div class="container">
     @foreach (var p in Model.Products)
     {
@@ -82,9 +54,7 @@
             <div class="card-body">
                 <h3 class="card-title">@p.productName</h3>
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box text-center kutu" style=""><img src=@p.productImgUrl alt=@p.productName class="img-responsive"></div>
-                    </div>
+                        <div class="card mx-auto"><img src=@p.productImgUrl alt=@p.productName></div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <h3 class="box-title mt-5">Ürün Genel Bilgileri</h3>
                         <div class="table-responsive">
@@ -92,7 +62,11 @@
                                 <tbody>
                                     <tr>
                                         <td width="390">Ürün Açıklaması</td>
-                                        <td>Product Açıklama</td>
+                                        <td>@p.productAciklama</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="390">Ürün Fiyatı</td>
+                                        <td>@p.productFiyat TL</td>
                                     </tr>
                                     <tr>
                                         <td>Ürün Barkodu</td>

@@ -28,6 +28,9 @@ namespace KarekodBarkodUygulaması.Migrations
                     b.Property<string>("karekodImgUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("productAciklama")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("productAdet")
                         .HasColumnType("int");
 
@@ -35,6 +38,9 @@ namespace KarekodBarkodUygulaması.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("productBarkodImgUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productFiyat")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("productImgUrl")

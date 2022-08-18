@@ -18,6 +18,8 @@ namespace KarekodBarkodUygulaması.Models
         public string productBarkodImgUrl { get; set; }
         public string karekodImgUrl { get; set; }
         public string productName { get; set; }
+        public string productAciklama { get; set; }
+        public string productFiyat { get; set; }
         public int productAdet { get; set; }
         
     }

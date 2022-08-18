@@ -48,9 +48,12 @@
 </style>
 @model KarekodBarkodUygulaması.Models.ViewModels.BarcodeScannerViewModel
 
+<!--QRCode Ve Barkod olarak ikiye ayrılmış nav-tabs-->
 <div class="p-3 bg-white rounded">
     <ul class="nav nav-tabs">
+        <!--QRCode-->
         <li class="active"><a data-toggle="tab" href="#home">QR Kod</a></li>
+        <!--Barkod-->
         <li><a data-toggle="tab" href="#barkod">Barkod</a></li>
     </ul>
     <div class="tab-content">
@@ -59,10 +62,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Taratmak İstediğiniz QR Kodu Yükleyin</h2>
+                        <!--Yüklenen resim QRCodeScanner fonksiyonuna gönderilir-->
                         <form asp-action="QRCodeScanner" enctype="multipart/form-data">
                             <div class="file-drop-area mb-2">
                                 <span class="choose-file-button">Resim Seç</span>
                                 <span class="file-message">ya da resmi sürükle bırak...</span>
+                                <!--QRCodeImageFile, BarcodeScannerViewModel içerisinde IFormFile değişkenidir-->
                                 <input class="file-input" asp-for="QRCodeImageFile" accept="image/*">
                             </div>
                             <input class="btn btn-info" type="submit" value="Tarat" />
@@ -76,10 +81,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Taratmak İstediğiniz Barkodu Yükleyin</h2>
+                        <!--Yüklenen resim BarcodeScanner fonksiyonuna gönderilir-->
                         <form asp-action="BarcodeScanner" enctype="multipart/form-data">
                             <div class="file-drop-area mb-2">
                                 <span class="choose-file-button">Resim Seç</span>
                                 <span class="file-message">ya da resmi sürükle bırak...</span>
+                                <!--BarkodImageFile, BarcodeScannerViewModel içerisinde IFormFile değişkenidir-->
                                 <input class="file-input" asp-for="BarkodImageFile" accept="image/*">
                             </div>
                             <input class="btn btn-info" type="submit" value="Tarat" />

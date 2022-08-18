@@ -36,7 +36,7 @@ namespace KarekodBarkodUygulaması.Controllers
 
         public IActionResult AllProduct(int page =1)
         {
-            return View(repository.Products.ToList().ToPagedList(page,4));
+            return View(repository.Products.ToList().ToPagedList(page,8));
         }
 
         public IActionResult SearchProduct(string ProdSearch)

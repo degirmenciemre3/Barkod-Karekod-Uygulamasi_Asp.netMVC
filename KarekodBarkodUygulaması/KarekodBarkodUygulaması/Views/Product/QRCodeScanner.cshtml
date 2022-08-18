@@ -43,11 +43,12 @@
 </style>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-
+<!--Taratılan ürün veritabanında var ise-->
 @if (Model.Products.Count() != 0)
 {
 
     <div class="container">
+        <!--Ürün detay bilgileri listelenir-->
         @foreach (var p in Model.Products)
         {
             <div class="card">
@@ -64,7 +65,11 @@
                                     <tbody>
                                         <tr>
                                             <td width="390">Ürün Açıklaması</td>
-                                            <td>Product Açıklama</td>
+                                            <td>@p.productAciklama</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="390">Ürün Fiyatı</td>
+                                            <td>@p.productFiyat TL</td>
                                         </tr>
                                         <tr>
                                             <td>Ürün Barkodu</td>
@@ -94,6 +99,13 @@
 }
 else
 {
-    <div>Ürün Bulunmamakta</div>
+    <!--Ürün veritabanında yoksa ekrana taratılan barkod ve bilgilendirici mesaj verilir-->
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="row">
+            <div class="col-md-12 bg-info rounded">
+                <h1 class="text-white">Tarattığınız Ürün Bulunmamakta</h1>
+                <h4 class="text-white">Tarattığınız Ürün Barkodu : @ViewBag.QRCodeText</h4>
+            </div>
+        </div>
+    </div>
 }
-<p>@ViewBag.QRCodeText</p>
