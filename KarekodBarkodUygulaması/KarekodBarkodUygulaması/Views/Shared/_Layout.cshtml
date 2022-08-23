@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Karekod Barkod Uygulaması</title>
+    <title>@ViewData["Title"] - Barkodex</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -16,33 +16,33 @@
 <body>
     <header>
         @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow p-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> Karekod Barkod Uygulaması</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AllProduct">Ürünlerimiz</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="CodeScanner">Barkod Tarat</a>
-                        </li>
-                    </ul>
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> Karekod Barkod Uygulaması</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AllProduct">Ürünlerimiz</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="CodeScanner">Barkod Tarat</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <form asp-area="" asp-controller="Product" asp-action="SearchProduct" class="form-inline my-2 my-lg-0 navbar-collapse collapse">
-                <input class="form-control mr-lg-2" type="search" name="ProdSearch" placeholder="Ürün Arayın" aria-label="Search">
-                <button class="btn btn-success my-2 my-sm-0 mr-5" type="submit">Ara</button>
-            </form>
-        </nav>*@
+                <form asp-area="" asp-controller="Product" asp-action="SearchProduct" class="form-inline my-2 my-lg-0 navbar-collapse collapse">
+                    <input class="form-control mr-lg-2" type="search" name="ProdSearch" placeholder="Ürün Arayın" aria-label="Search">
+                    <button class="btn btn-success my-2 my-sm-0 mr-5" type="submit">Ara</button>
+                </form>
+            </nav>*@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Karekod Barkod Uygulamasır</a>
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Barkodex</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -58,9 +58,9 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Product" asp-action="CodeScanner">Barkod Tarat</a>
                     </li>
-                </ul> 
+                </ul>
             </div>
-            <form class="form-inline my-5 my-lg-0 navbar-collapse collapse" asp-area="" asp-controller="Product" asp-action="SearchProduct">
+            <form class="form-inline my-5 my-lg-0" asp-area="" asp-controller="Product" asp-action="SearchProduct">
                 <input class="form-control mr-sm-2" type="search" placeholder="Ürün Arayın" name="ProdSearch" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
@@ -74,7 +74,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - KarekodBarkodUygulaması - Build By Emre Değirmenci
+            &copy; 2022 - Barkodex - Build By Emre Değirmenci
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -95,6 +95,7 @@
             }
         });
     </script>
+    
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

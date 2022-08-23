@@ -7,7 +7,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        width: 450px;
+        width: 100%;
         max-width: 100%;
         padding: 25px;
         border: 1px dashed rgba(255, 255, 255, 0.4);
@@ -69,7 +69,7 @@
                                 <!--QRCodeImageFile, BarcodeScannerViewModel içerisinde IFormFile değişkenidir-->
                                 <input class="file-input" asp-for="QRCodeImageFile" accept="image/*">
                             </div>
-                            <input class="btn btn-info" type="submit" value="Tarat" />
+                            <input class="btn btn-info col-md-12" type="submit" value="Tarat" />
                         </form>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                                 <!--BarkodImageFile, BarcodeScannerViewModel içerisinde IFormFile değişkenidir-->
                                 <input class="file-input" asp-for="BarkodImageFile" accept="image/*">
                             </div>
-                            <input class="btn btn-info" type="submit" value="Tarat" />
+                            <input class="btn btn-info col-md-12" type="submit" value="Tarat" />
                         </form>
                     </div>
                 </div>
@@ -97,25 +97,22 @@
     </div>
 </div>
 
-
-<div class="container">
-    <br />
-    <div class="col-md-2"></div>
-    <div class="col-md-4">
-        <div>
-            camera
-        </div>
-        <div id="my_camera"></div>
-        <form>
-            <input type="button" name="name" class="btn btn-success" value="Take Snapshot" onclick="take_snapshot()" />
-        </form>
-    </div>
-    <div class="col-md-4">
-        <div>
-            <div>
-                Capture Photo
+<div class="p-3 bg-white rounded mt-5">
+    <div class="container d-flex justify-content-center">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Webcam
+                <img class="ml-2" src="~/img/WebPageImg/webcam.svg" />
             </div>
-            <div id="results">your results in here</div>
+            <div class="panel-body text-center">
+
+                <div id="my_camera"></div>
+                <!-- QR kodu ya da barkodu taratma butonu -->
+                <form>
+                    <input type="button" class="btn btn-success mt-2 col-md-12" value="Barkodu/QRKodu Tarat" onClick="take_snapshot()">
+                </form>
+
+            </div>
         </div>
     </div>
 </div>
@@ -133,11 +130,9 @@
 <script language="JavaScript">
     function take_snapshot() {
         Webcam.snap(function (data_uri) {
-            document.getElementById('results').innerHTML =
-                '<img src="' + data_uri + '"/>';
-            Webcam.upload(data_uri,
+            Webcam.upload(data_uri, "/Product/WebcamCapture",
                 function (code, text) {
-                    alert('Photo Captured');
+                    window.location.href = '@Url.Action("WebcamListView", "Product")/' + text;
                 });
         });
     }

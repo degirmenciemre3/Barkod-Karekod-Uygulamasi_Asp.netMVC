@@ -16,10 +16,10 @@
     <DataAnnotationsValidator />
     @if (product.productID != 0)
     {
-<div class="form-group">
-    <label>ID</label>
-    <input class="form-control" disabled value="@product.productID" />
-</div>}
+        <div class="form-group">
+            <label>ID</label>
+            <input class="form-control" disabled value="@product.productID" />
+        </div>}
     <div class="form-group">
         <label>Product Barkod</label>
         <ValidationMessage For="@(() => product.productBarkod)" />
@@ -29,6 +29,16 @@
         <label>Product Name</label>
         <ValidationMessage For="@(() => product.productName)" />
         <InputText class="form-control" @bind-Value="product.productName" />
+    </div>
+    <div class="form-group">
+        <label>Product Açıklama</label>
+        <ValidationMessage For="@(() => product.productAciklama)" />
+        <InputText class="form-control" @bind-Value="product.productAciklama" />
+    </div>
+    <div class="form-group">
+        <label>Product Fiyat</label>
+        <ValidationMessage For="@(() => product.productFiyat)" />
+        <InputText class="form-control" @bind-Value="product.productFiyat" />
     </div>
     <div class="form-group">
         <label>Product Img</label>

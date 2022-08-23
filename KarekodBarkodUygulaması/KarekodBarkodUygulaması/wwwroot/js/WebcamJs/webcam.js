@@ -59,9 +59,9 @@ var Webcam = {
 		constraints: null,     // custom user media constraints,
 		swfURL: '',            // URI to webcam.swf movie (defaults to the js location)
 		flashNotDetectedText: 'ERROR: No Adobe Flash Player detected.  Webcam.js relies on Flash for browsers that do not support getUserMedia (like yours).',
-		noInterfaceFoundText: 'No supported webcam interface found.',
+		noInterfaceFoundText: 'Desteklenen web kamerasý arabirimi bulunamadý.',
 		unfreeze_snap: true,    // Whether to unfreeze the camera after snap (defaults to true)
-		iosPlaceholderText: 'Click here to open camera.',
+		iosPlaceholderText: 'Kamerayý açmak için týklayýn.',
 		user_callback: null,    // callback function for snapshot (used if no user_callback parameter given to snap function)
 		user_canvas: null       // user provided canvas for snapshot (used if no user_canvas parameter given to snap function)
 	},

@@ -368,3 +368,5 @@ C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodU
 C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\ref\KarekodBarkodUygulaması.dll
 C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\KarekodBarkodUygulaması.pdb
 C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\KarekodBarkodUygulaması.genruntimeconfig.cache
+C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Views\Product\WebcamCapture.cshtml.g.cs
+C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Views\Product\WebcamListView.cshtml.g.cs

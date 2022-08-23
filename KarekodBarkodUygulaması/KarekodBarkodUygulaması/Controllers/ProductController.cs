@@ -57,7 +57,7 @@ namespace KarekodBarkodUygulaması.Controllers
             var file = Barkod.QRCodeImageFile;
             string webRootPath = _hostEnvironment.WebRootPath + "\\img\\productKarekodImg\\ScanQRCodeImg\\";
             string fileName = Path.GetFileNameWithoutExtension(file.FileName);
-            string path = Path.Combine(webRootPath + fileName+".png");
+            string path = Path.Combine(webRootPath + fileName + ".png");
             using (var filestream = new FileStream(path, FileMode.Create))
             {
                 await file.CopyToAsync(filestream);
@@ -65,20 +65,27 @@ namespace KarekodBarkodUygulaması.Controllers
             var reader = new BarcodeReaderGeneric();
             Bitmap image = (Bitmap)Image.FromFile(path);
             Result result;
+            string sonuc = "Geçersiz Barkod Girdiniz...";
             using (image)
             {
                 LuminanceSource source;
                 source = new ZXing.Windows.Compatibility.BitmapLuminanceSource(image);
                 result = reader.Decode(source);
-                ViewBag.QRCodeText = result.Text;
+                if (result != null)
+                {
+                    sonuc = result.Text;
+                    ViewBag.QRCodeText = sonuc;
+                }
+                else
+                {
+                    ViewBag.QRCodeText = sonuc;
+                }
             }
             return View(new ProductsViewModel
             {
-                Products = repository.Products.Where(x=> x.productBarkod == result.Text)
+                Products = repository.Products.Where(x => x.productBarkod == sonuc)
             });
         }
-
-
         public async Task<IActionResult> BarcodeScanner([Bind("BarkodImageFile")] BarcodeScannerViewModel Barkod)
         {
             var file = Barkod.BarkodImageFile;
@@ -89,20 +96,101 @@ namespace KarekodBarkodUygulaması.Controllers
             {
                 await file.CopyToAsync(filestream);
             }
-                var reader = new BarcodeReaderGeneric();
+            var reader = new BarcodeReaderGeneric();
             Bitmap image = (Bitmap)Image.FromFile(path);
             Result result;
+            string sonuc = "Geçersiz Barkod Girdiniz...";
             using (image)
             {
                 LuminanceSource source;
                 source = new ZXing.Windows.Compatibility.BitmapLuminanceSource(image);
                 result = reader.Decode(source);
-                ViewBag.BarcodeText = result.Text;
+                if (result != null)
+                {
+                    sonuc = result.Text;
+                    ViewBag.BarcodeText = sonuc;
+                }
+                else
+                {
+                    ViewBag.BarcodeText = sonuc;
+                }
             }
             return View(new ProductsViewModel
             {
-                Products = repository.Products.Where(x => x.productBarkod == result.Text)
+                Products = repository.Products.Where(x => x.productBarkod == sonuc)
             });
+        }
+
+        [HttpPost]
+        public string WebcamCapture()
+        {
+            var filePath = "";
+            Result result = null;
+            string sonuc = "Geçersiz Barkod Girdiniz...";
+            try
+            {
+                var files = HttpContext.Request.Form.Files;
+                if (files!= null)
+                {
+                    foreach (var file in files)
+                    {
+                        if (file.Length >0)
+                        {
+                            var fileName = file.FileName;
+                            var myUniqueFileName = Convert.ToString(Guid.NewGuid());
+                            var fileExtension = Path.GetExtension(fileName);
+                            var newFileName = string.Concat(myUniqueFileName, fileExtension);
+                            string webRootPath = _hostEnvironment.WebRootPath + "\\img\\WebcamImg\\";
+                            filePath = Path.Combine(webRootPath + newFileName);
+                            if (!string.IsNullOrEmpty(filePath))
+                            {
+                                StoreInFolder(file,filePath);
+                                var reader = new BarcodeReaderGeneric();
+                                Bitmap image = (Bitmap)Image.FromFile(filePath);
+                                using (image)
+                                {
+                                    LuminanceSource source;
+                                    source = new ZXing.Windows.Compatibility.BitmapLuminanceSource(image);
+                                    result = reader.Decode(source);
+                                    if (result != null)
+                                    {
+                                        sonuc = result.Text;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                    return sonuc;
+                }
+                else
+                {
+                    return "false";
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public IActionResult WebcamListView(string id)
+        {
+            ViewBag.QRCodeText = id;
+            return View(new ProductsViewModel
+            {
+                Products = repository.Products.Where(x => x.productBarkod == id)
+            });
+        }
+
+        public void StoreInFolder(IFormFile file, string fileName)
+        {
+            using (FileStream fs = System.IO.File.Create(fileName))
+            {
+                file.CopyTo(fs);
+                fs.Flush();
+            }
         }
     }
 }

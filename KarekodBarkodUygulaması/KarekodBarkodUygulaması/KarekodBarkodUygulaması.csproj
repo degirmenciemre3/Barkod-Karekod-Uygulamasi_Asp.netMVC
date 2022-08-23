@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\img\WebcamImg\" />
     <Folder Include="wwwroot\img\productBarkodImg\ScanBarcodeImg\" />
     <Folder Include="wwwroot\img\productKarekodImg\ScanQRCodeImg\" />
   </ItemGroup>
