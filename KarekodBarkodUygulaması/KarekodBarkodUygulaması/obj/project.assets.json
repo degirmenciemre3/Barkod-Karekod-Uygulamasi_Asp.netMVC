@@ -7822,11 +7822,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\programlama\\web-programlama\\Barkod-Karekod-Uygulamasi_Asp.netMVC\\KarekodBarkodUygulaması\\KarekodBarkodUygulaması\\KarekodBarkodUygulaması.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\github\\Barkod-Karekod-Uygulamasi_Asp.netMVC\\KarekodBarkodUygulaması\\KarekodBarkodUygulaması\\KarekodBarkodUygulaması.csproj",
       "projectName": "KarekodBarkodUygulaması",
-      "projectPath": "C:\\Users\\User\\Desktop\\programlama\\web-programlama\\Barkod-Karekod-Uygulamasi_Asp.netMVC\\KarekodBarkodUygulaması\\KarekodBarkodUygulaması\\KarekodBarkodUygulaması.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\github\\Barkod-Karekod-Uygulamasi_Asp.netMVC\\KarekodBarkodUygulaması\\KarekodBarkodUygulaması\\KarekodBarkodUygulaması.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\programlama\\web-programlama\\Barkod-Karekod-Uygulamasi_Asp.netMVC\\KarekodBarkodUygulaması\\KarekodBarkodUygulaması\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\github\\Barkod-Karekod-Uygulamasi_Asp.netMVC\\KarekodBarkodUygulaması\\KarekodBarkodUygulaması\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
