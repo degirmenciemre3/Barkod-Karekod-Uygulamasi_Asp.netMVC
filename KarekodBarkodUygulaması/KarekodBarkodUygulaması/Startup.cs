@@ -29,7 +29,6 @@ namespace KarekodBarkodUygulaması
         {
             services.AddControllersWithViews();
 
-
             //Appsettings.json içerisinde belirttiğimiz mssql bağlantı cümlesini burada UseSqlserver fonksiyonu içerisinde kullanıyoruz
             //Database oluşturma işlemleri
             services.AddDbContext<DatabaseContext>(opts => {
@@ -41,17 +40,20 @@ namespace KarekodBarkodUygulaması
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
+            services.AddScoped<IOrderRepository, EFOrderRepository>();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddServerSideBlazor();
             //admin için ayrı bir veritabanı kullanılacağız bunun için ikinci bir bağlantı adresi belirtiyoruz
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlServer(
                     Configuration["ConnectionStrings:IdentityConnection"]));
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<UserModel, IdentityRole>()
                 .AddEntityFrameworkStores<AppIdentityDbContext>();
 
             services.AddScoped<IFileUpload, FileUpload>();
 
+            
         }
 
         
@@ -67,13 +69,16 @@ namespace KarekodBarkodUygulaması
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
+            app.UseStatusCodePages();
+            app.UseStaticFiles();
+            app.UseSession();
             app.UseRouting();
+
+            
 
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

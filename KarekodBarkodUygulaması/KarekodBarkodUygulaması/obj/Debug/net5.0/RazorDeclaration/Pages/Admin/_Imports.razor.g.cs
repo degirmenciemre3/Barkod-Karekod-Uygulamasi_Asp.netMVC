@@ -11,84 +11,84 @@ namespace KarekodBarkodUygulaması.Pages.Admin
     using System.Linq;
     using System.Threading.Tasks;
 #nullable restore
-#line 1 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 1 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using Microsoft.AspNetCore.Components;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 2 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 3 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 4 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 5 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using Microsoft.EntityFrameworkCore;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 6 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using KarekodBarkodUygulaması.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 7 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using Microsoft.AspNetCore.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 8 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using System;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 9 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using System.IO;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 10 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using Microsoft.AspNetCore.Hosting;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 11 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using Microsoft.Extensions.Logging;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\User\Desktop\programlama\web-programlama\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+#line 12 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
 using BlazorInputFile;
 
 #line default

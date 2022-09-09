@@ -12,11 +12,12 @@
         margin-top: 4%;
     }
 
-        .register-left input {
+        .register-left a {
             border: none;
+            text-decoration: none;
             border-radius: 1.5rem;
             padding: 2%;
-            width: 60%;
+            width: 80%;
             background: #f8f9fa;
             font-weight: bold;
             color: #383d41;
@@ -107,7 +108,7 @@
             <img src="~/img/WebPageImg/rocket2.svg" alt="" />
             <h3>Hoşgeldin</h3>
             <p>Site içerisinde alışveriş yapabilmek için giriş yap!</p>
-            <input type="submit" name="" value="Giriş Yap" /><br />
+            <a asp-controller="Account" asp-action="Login">  Giriş Yap  </a><br />
         </div>
         <div class="col-md-9 register-right">
             <h3 class="register-heading">Kayıtlı Değilsen Kayıt Ol!</h3>

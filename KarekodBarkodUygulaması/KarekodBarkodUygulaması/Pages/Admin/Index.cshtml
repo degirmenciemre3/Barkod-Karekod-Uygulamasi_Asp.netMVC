@@ -1,7 +1,7 @@
 ﻿@page "/admin"
 @{ Layout = null; }
 @using Microsoft.AspNetCore.Authorization
-@attribute [Authorize]
+@attribute [Authorize(Roles = "Administrator")]
 
 <!DOCTYPE html>
 <html>

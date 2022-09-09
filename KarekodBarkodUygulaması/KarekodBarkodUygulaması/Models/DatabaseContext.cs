@@ -16,5 +16,6 @@ namespace KarekodBarkodUygulaması.Models
             : base(options) { }
         //Veritabanında oluşturulacak tabloları listeliyoruz şimdilik sadece products tablosu bulunmakta.
         public DbSet<Product> products { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

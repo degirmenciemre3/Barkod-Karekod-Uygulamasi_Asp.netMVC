@@ -9,9 +9,11 @@
             <a class="nav-link text-dark"  href="/userProfil" title="Manage">Merhaba @User.Identity.Name!</a>
         </li>
         <li class="nav-item">
-            <form class="form-inline" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home")">
-                <button type="submit" class="nav-link btn btn-link text-dark">Çıkış Yap</button>
-            </form>
+            <div class="nav-link">
+                <form class="form-inline" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home")">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Çıkış Yap</button>
+                </form>
+            </div>
         </li>
     }
     else

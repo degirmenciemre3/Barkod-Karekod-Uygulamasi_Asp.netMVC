@@ -12,7 +12,17 @@
     <base href="/" />
 </head>
 <body>
+
     <component type="typeof(Routed)" render-mode="Server" />
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Ana Sayfa</a></li>
+            <li class="nav-item"><a href="/userSiparis" class="nav-link px-2 text-muted">Siparişlerim</a></li>
+            <li class="nav-item"><a href="/userProfil" class="nav-link px-2 text-muted">Profilim</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" asp-area="" asp-controller="Product" asp-action="AllProduct">Ürünlerimiz</a></li>
+        </ul>
+        <p class="text-center text-muted">&copy; 2022 - Barkodex - Build By Emre Değirmenci</p>
+    </footer>
     <script src="/_framework/blazor.server.js"></script>
 </body>
 </html>

@@ -156,11 +156,88 @@ namespace KarekodBarkodUygulaması.Controllers
                                     {
                                         sonuc = result.Text;
                                     }
+                                    else
+                                    {
+                                        sonuc = "null";
+                                    }
+                                    
                                 }
 
                             }
                         }
                     }
+                    StoreDeleteInFolder(filePath);
+                    return sonuc;
+                }
+                else
+                {
+                    return "false";
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+
+        [HttpPost]
+        public string WebcamAddCart()
+        {
+            var filePath = "";
+            Result result = null;
+            Product product = new Product();
+            string sonuc = "Geçersiz Barkod Girdiniz...";
+            try
+            {
+                var files = HttpContext.Request.Form.Files;
+                if (files != null)
+                {
+                    foreach (var file in files)
+                    {
+                        if (file.Length > 0)
+                        {
+                            var fileName = file.FileName;
+                            var myUniqueFileName = Convert.ToString(Guid.NewGuid());
+                            var fileExtension = Path.GetExtension(fileName);
+                            var newFileName = string.Concat(myUniqueFileName, fileExtension);
+                            string webRootPath = _hostEnvironment.WebRootPath + "\\img\\WebcamImg\\";
+                            filePath = Path.Combine(webRootPath + newFileName);
+                            if (!string.IsNullOrEmpty(filePath))
+                            {
+                                StoreInFolder(file, filePath);
+                                var reader = new BarcodeReaderGeneric();
+                                Bitmap image = (Bitmap)Image.FromFile(filePath);
+                                using (image)
+                                {
+                                    LuminanceSource source;
+                                    source = new ZXing.Windows.Compatibility.BitmapLuminanceSource(image);
+                                    result = reader.Decode(source);
+                                    if (result != null)
+                                    {
+                                        product = repository.Products.Where(p => p.productBarkod == result.ToString()).FirstOrDefault();
+                                        if (product != null)
+                                        {
+                                            sonuc = product.productID.ToString();
+                                        }
+                                        else
+                                        {
+                                            sonuc = "null";
+                                        }
+                                    }
+                                    else
+                                    {
+                                        sonuc = "null";
+                                    }
+
+                                }
+
+                            }
+                        }
+                    }
+                    StoreDeleteInFolder(filePath);
                     return sonuc;
                 }
                 else
@@ -191,6 +268,10 @@ namespace KarekodBarkodUygulaması.Controllers
                 file.CopyTo(fs);
                 fs.Flush();
             }
+        }
+        public void StoreDeleteInFolder(string fileName)
+        {
+            System.IO.File.Delete(fileName);
         }
     }
 }

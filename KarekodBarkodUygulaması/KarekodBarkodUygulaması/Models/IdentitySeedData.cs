@@ -25,17 +25,31 @@ namespace KarekodBarkodUygulaması.Models
                 context.Database.Migrate();
             }
 
-            UserManager<IdentityUser> userManager = app.ApplicationServices
+            UserManager<UserModel> userManager = app.ApplicationServices
                 .CreateScope().ServiceProvider
-                .GetRequiredService<UserManager<IdentityUser>>();
+                .GetRequiredService<UserManager<UserModel>>();
 
-            IdentityUser user = await userManager.FindByIdAsync(adminUser);
+            RoleManager<IdentityRole> roleManager = app.ApplicationServices
+                .CreateScope().ServiceProvider
+                .GetRequiredService<RoleManager<IdentityRole>>();
+
+            IdentityRole role = await roleManager.FindByNameAsync("Administrator");
+            if (role == null)
+            {
+                await roleManager.CreateAsync(new IdentityRole { Name = "Administrator" });
+            }
+
+
+            UserModel user = await userManager.FindByIdAsync(adminUser);
+
             if (user == null)
             {
-                user = new IdentityUser("Admin");
+                user = new UserModel("Admin");
+                user.LastName = "Admin";
                 user.Email = "admin@example.com";
                 user.PhoneNumber = "555-1234";
                 await userManager.CreateAsync(user, adminPassword);
+                await userManager.AddToRoleAsync(user, "Administrator");
             }
         }
     }
