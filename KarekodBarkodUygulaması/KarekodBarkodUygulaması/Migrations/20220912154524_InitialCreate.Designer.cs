@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KarekodBarkodUygulaması.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220908203813_InitialCreate")]
+    [Migration("20220912154524_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,6 +67,13 @@ namespace KarekodBarkodUygulaması.Migrations
                     b.Property<bool>("IadeMi")
                         .HasColumnType("bit");
 
+                    b.Property<string>("KargoNumarasi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("KargolandiMi")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Line1")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -84,6 +91,9 @@ namespace KarekodBarkodUygulaması.Migrations
                     b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TeslimEdildiMi")
+                        .HasColumnType("bit");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");

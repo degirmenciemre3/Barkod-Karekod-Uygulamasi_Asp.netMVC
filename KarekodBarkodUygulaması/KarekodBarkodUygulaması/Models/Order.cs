@@ -38,5 +38,10 @@ namespace KarekodBarkodUygulaması.Models
         public string UserName { get; set; }
 
         public bool IadeMi { get; set; }
+        public bool KargolandiMi { get; set; }
+        public bool TeslimEdildiMi { get; set; }
+
+        [Required(ErrorMessage = "Kargo Numarası Girmelisiniz")]
+        public string KargoNumarasi  { get; set; }
     }
 }

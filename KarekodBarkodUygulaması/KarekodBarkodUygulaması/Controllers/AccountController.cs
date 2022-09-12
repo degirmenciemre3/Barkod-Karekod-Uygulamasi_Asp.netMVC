@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace KarekodBarkodUygulaması.Controllers
 {
+    // TODO admin sayfasına siparişlerin düzenlenmesi.
     public class AccountController : Controller
     {
         private UserManager<UserModel> userManager;

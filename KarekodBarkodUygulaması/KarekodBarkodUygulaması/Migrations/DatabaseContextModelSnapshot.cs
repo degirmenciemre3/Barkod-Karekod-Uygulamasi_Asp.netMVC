@@ -65,6 +65,13 @@ namespace KarekodBarkodUygulaması.Migrations
                     b.Property<bool>("IadeMi")
                         .HasColumnType("bit");
 
+                    b.Property<string>("KargoNumarasi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("KargolandiMi")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Line1")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -82,6 +89,9 @@ namespace KarekodBarkodUygulaması.Migrations
                     b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TeslimEdildiMi")
+                        .HasColumnType("bit");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");

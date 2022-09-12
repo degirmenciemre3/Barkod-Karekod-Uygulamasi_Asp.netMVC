@@ -22,7 +22,10 @@ namespace KarekodBarkodUygulaması.Migrations
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GiftWrap = table.Column<bool>(type: "bit", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IadeMi = table.Column<bool>(type: "bit", nullable: false)
+                    IadeMi = table.Column<bool>(type: "bit", nullable: false),
+                    KargolandiMi = table.Column<bool>(type: "bit", nullable: false),
+                    TeslimEdildiMi = table.Column<bool>(type: "bit", nullable: false),
+                    KargoNumarasi = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

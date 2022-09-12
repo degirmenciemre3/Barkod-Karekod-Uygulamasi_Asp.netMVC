@@ -117,12 +117,11 @@ using Microsoft.AspNetCore.Components.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 131 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\UserPage\UserSiparis.razor"
+#line 90 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\UserPage\UserSiparis.razor"
        
     public IOrderRepository Repository => Service;
 
     public IEnumerable<Order> OrderData { get; set; }
-    public IEnumerable<Order> OrderIadeData { get; set; }
 
     public UserModel model;
     protected async override Task OnInitializedAsync()
@@ -140,8 +139,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 
     public async Task UpdateData()
     {
-        OrderData = await Repository.Orders.Where(p => p.UserName == model.UserName).Where(j => j.IadeMi == false).ToListAsync();
-        OrderIadeData = await Repository.Orders.Where(p => p.UserName == model.UserName).Where(j => j.IadeMi == true).ToListAsync();
+        OrderData = await Repository.Orders.Where(p => p.UserName == model.UserName).ToListAsync();
     }
 
 

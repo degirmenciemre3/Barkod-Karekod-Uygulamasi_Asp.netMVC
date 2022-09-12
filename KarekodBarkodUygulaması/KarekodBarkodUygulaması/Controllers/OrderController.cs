@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KarekodBarkodUygulaması.Controllers
 {
+    // TODO siparişlerin kargoya verilmesi. 
     public class OrderController : Controller
     {
         private IOrderRepository orderRepository;

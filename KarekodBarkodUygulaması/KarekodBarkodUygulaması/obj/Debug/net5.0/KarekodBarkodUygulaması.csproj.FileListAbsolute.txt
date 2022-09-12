@@ -399,3 +399,7 @@ C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodU
 C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Pages\UserPage\UserSiparisDetay.razor.g.cs
 C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\RazorDeclaration\Pages\UserPage\ModalDialog.razor.g.cs
 C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Pages\UserPage\ModalDialog.razor.g.cs
+C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\bin\Debug\net5.0\Radzen.Blazor.dll
+C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\bin\Debug\net5.0\System.Linq.Dynamic.Core.dll
+C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\RazorDeclaration\Pages\Admin\OrderEdit.razor.g.cs
+C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\obj\Debug\net5.0\Razor\Pages\Admin\OrderEdit.razor.g.cs

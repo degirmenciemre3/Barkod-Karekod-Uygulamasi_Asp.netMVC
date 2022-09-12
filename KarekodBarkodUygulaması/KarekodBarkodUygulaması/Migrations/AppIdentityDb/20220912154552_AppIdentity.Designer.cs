@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KarekodBarkodUygulaması.Migrations.AppIdentityDb
 {
     [DbContext(typeof(AppIdentityDbContext))]
-    [Migration("20220908203831_AppIdentity")]
+    [Migration("20220912154552_AppIdentity")]
     partial class AppIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

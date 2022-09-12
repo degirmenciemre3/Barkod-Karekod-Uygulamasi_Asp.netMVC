@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace KarekodBarkodUygulaması.Controllers
 {
+    
     public class HomeController : Controller
     {
         private IProductsRepository repository;

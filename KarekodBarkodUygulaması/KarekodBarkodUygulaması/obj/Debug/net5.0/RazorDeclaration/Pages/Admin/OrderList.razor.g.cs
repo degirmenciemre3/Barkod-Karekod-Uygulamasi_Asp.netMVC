@@ -94,6 +94,20 @@ using BlazorInputFile;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+using Radzen;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\_Imports.razor"
+using Radzen.Blazor;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/admin/OrderList")]
     public partial class OrderList : OwningComponentBase<IOrderRepository>
     {
@@ -103,12 +117,11 @@ using BlazorInputFile;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 121 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\OrderList.razor"
+#line 82 "C:\Users\User\Desktop\github\Barkod-Karekod-Uygulamasi_Asp.netMVC\KarekodBarkodUygulaması\KarekodBarkodUygulaması\Pages\Admin\OrderList.razor"
   
     public IOrderRepository Repository => Service;
 
     public IEnumerable<Order> OrderData { get; set; }
-    public IEnumerable<Order> OrderIadeData { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
@@ -117,8 +130,7 @@ using BlazorInputFile;
 
     public async Task UpdateData()
     {
-        OrderData = await Repository.Orders.Where(p => p.IadeMi == false).ToListAsync();
-        OrderIadeData = await Repository.Orders.Where(p => p.IadeMi == true).ToListAsync();
+        OrderData = await Repository.Orders.ToListAsync();
     }
 
 
